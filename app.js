@@ -68,10 +68,18 @@ async function start() {
     let t2 = content.match(/【签到奖励】:((.|\n)*)【其他奖励】/)
     let res2 = t2 ? t2[1].replace(/\n/,'') : '总计0'
 
-    console.log(res);
-      console.log(res2);
     
-    await sendNotify("" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
+    console.log("结果:" + res);
+
+    if(res === "失败"){
+          await sendNotify("" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
+    }
+        
+    
+      
+      
+    
+    
   }
 }
 
